@@ -4,6 +4,8 @@ set expandtab
 set autoindent
 set nobackup
 set nowritebackup
+set number 
+
 execute pathogen#infect()
 syntax on
 
