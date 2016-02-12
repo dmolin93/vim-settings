@@ -15,6 +15,9 @@ autocmd VimEnter * wincmd p
 " Shut down NERDTree if no files open
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
+" Ignore files in nerdtree
+let NERDTreeIgnore = ["\.pyc$"]
+
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function! s:CloseIfOnlyNerdTreeLeft()
