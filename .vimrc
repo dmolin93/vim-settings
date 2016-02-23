@@ -5,6 +5,7 @@ set autoindent
 set nobackup
 set nowritebackup
 set number 
+set mouse=v
 
 execute pathogen#infect()
 syntax on
@@ -14,6 +15,7 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 " Shut down NERDTree if no files open
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+let NERDTreeIgnore = ['\.pyc$']
 
 " Ignore files in nerdtree
 let NERDTreeIgnore = ["\.pyc$"]
@@ -37,16 +39,22 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Auto insert } after {
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap {      {}<Left>
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap {<CR>  {<CR>}<Esc>O
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap {{     {
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap {}     {}
 
 " Auto insert ) after (
 inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
+
+" Auto insert ] after [
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap [      []<Left>
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap [<CR>  [<CR>]<Esc>O
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap [[     [
+autocmd FileType c,cpp,java,php,groovy,py,python,sh inoremap []     []
 
 " Remove trailing whitespaces for specific filetypes
 autocmd FileType c,cpp,java,php,groovy,py,python,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
