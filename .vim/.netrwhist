@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/emolden/.ssh'
+let g:netrw_dirhist_2='/workarea/bss-f_gen/emolden/workspace/hello-maven-plugin/src/main/java/sample/plugin'
+let g:netrw_dirhist_3='/home/emolden'
+let g:netrw_dirhist_4='/local/emolden/.m2/repository/com/ericsson/bss/rmca/integration/cdac/12.1.0-SNAPSHOT'
+let g:netrw_dirhist_5='/home/emolden/.ssh'
+let g:netrw_dirhist_6='/home/emolden'
